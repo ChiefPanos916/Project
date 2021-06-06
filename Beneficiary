@@ -1,0 +1,66 @@
+public class Beneficiary extends User{
+    
+    public String BeneficiaryName1 = "Giorgos Panou";
+    public String BeneficiaryName2 = "Xristos Rigas";
+    public int BeneficiaryPhone1 = 2;
+    public int BeneficiaryPhone2 = 3; 
+
+    public int getBenPhone1(){
+        return this.BeneficiaryPhone1;
+       }
+    public String getBenName1(){
+        return this.BeneficiaryName1;
+       }  
+    public int getBenPhone2(){
+        return this.BeneficiaryPhone2;
+       }
+    public String getBenName2(){
+        return this.BeneficiaryName2;
+       }  
+
+    public void getBenInfo1(){
+        System.out.println("");
+        System.out.println("Welcome Beneficiary!");
+        System.out.println("");
+        System.out.println("Name: " + this.BeneficiaryName1);
+        System.out.println("Phone Number: " + this.BeneficiaryPhone1);
+    }
+    public void getBenInfo2(){
+        System.out.println("");
+        System.out.println("Welcome Beneficiary!");
+        System.out.println("");
+        System.out.println("Name: " + this.BeneficiaryName2);
+        System.out.println("Phone Number: " + this.BeneficiaryPhone2);
+    }
+    public static void getOptions(){
+        System.out.println("");
+        System.out.println("1.Add Request");
+        System.out.println("2.Show Requests");
+        System.out.println("3.Commit");
+        System.out.println("4.Back");
+        System.out.println("5.Logout");
+        System.out.println("6.Exit");
+        System.out.println("");
+        System.out.print("Choose your action: ");
+       }
+    public void getBens(){     
+        System.out.println("");
+        System.out.println("1." + this.BeneficiaryName1);
+        System.out.println("2." + this.BeneficiaryName2);
+        System.out.println("");
+    }   
+    static void getC1(){
+        System.out.println("");
+        System.out.println("Your matterials limit is 5 packages");
+        System.out.println("Your services limit is 8 hours");
+        System.out.println("");
+        System.out.print("Press 1 if you need materials or 2 if you need services: ");
+    }
+    public void getOpt10(){
+        System.out.println("1.Delete request or modify request");
+        System.out.println("2.Delete all requests");
+        System.out.println("3.Commit");
+        System.out.println("");
+        System.out.print("Choose you action: ");
+    }
+   }
