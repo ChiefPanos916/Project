@@ -1,0 +1,52 @@
+public class Donator extends User{
+ 
+    public String DonName = "Alekos Papas";
+    public int DonPhone = 1;
+    
+    public int getDonPhone(){
+        return this.DonPhone;
+       }
+    public String getDonName(){
+        return this.DonName;
+       }
+    public void getDonInfo(){
+        System.out.println("");
+        System.out.println("Welcome Donator!");
+        System.out.println("");
+        System.out.println("Name: " + this.DonName);
+        System.out.println("Phone Number: " + this.DonPhone);
+    }   
+    public static void getOptions(){
+        System.out.println("");
+        System.out.println("1.Add Offer");
+        System.out.println("2.Show Offers");
+        System.out.println("3.Commit");
+        System.out.println("4.Back");
+        System.out.println("5.Logout");
+        System.out.println("6.Exit");
+        System.out.println("");
+        System.out.print("Choose your action: ");
+    }
+    public void getDons(){
+        System.out.println("");
+        System.out.println("1." + this.DonName);
+        System.out.println("");
+    }
+    public void getOpt1(){
+        System.out.println("");
+        System.out.print("Press 1 to offer materials or 2 to offer services: ");
+    }
+    public static void commit(){
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+    }
+    public void getOpt10(){
+        System.out.println("1.Delete donation or modify donation");
+        System.out.println("2.Delete all donations");
+        System.out.println("3.Commit");
+        System.out.println("");
+        System.out.print("Choose you action: ");
+    }
+   }
