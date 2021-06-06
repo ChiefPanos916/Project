@@ -1,0 +1,148 @@
+
+class Materials{
+    public String Mat1 = "Milk";
+    public String Mat2 = "Rice";
+    public String Mat3 = "Sugar";
+    
+    public double Quan1 = 3;
+    public double Quan2 = 5;
+    public double Quan3 = 10;
+
+    public double Quan10 = 6;
+    public double Quan20 = 3;
+    public double Quan30 = 2;
+
+    public double Quan11 = 10;
+    public double Quan21 = 6;
+    public double Quan31 = 1;
+
+    public double Quan12 = 1;
+    public double Quan22 = 5;
+    public double Quan32 = 3;
+
+    public String getMat1(){
+        return this.Mat1;
+    }
+    public String getMat2(){
+        return this.Mat2;
+    }
+    public String getMat3(){
+        return this.Mat3;
+    }
+    public double getQuan1(){
+        return this.Quan1;
+    }
+    public double getQuan2(){
+        return this.Quan2;
+    }
+    public double getQuan3(){
+        return this.Quan3;
+    }
+    public void getMats(){
+        System.out.println("");
+        System.out.println("PRODUCTS: ");
+        System.out.println("");
+        System.out.println("1.Product Name: " + this.Mat1 + ", Product Quantity: " + this.Quan1 + " packages");
+        System.out.println("2.Product Name: " + this.Mat2 + ", Product Quantity: " + this.Quan2 + " packages");
+        System.out.println("3.Product Name: " + this.Mat3 + ", Product Quantity: " + this.Quan3 + " packages");
+        System.out.println("");
+    }
+    public void addProd1(double x){
+        Quan1 = Quan1 + x;
+        System.out.println("New product quantity: " + Quan1);
+    }
+    public void addProd2(double x){
+        Quan2 = Quan2 + x;
+        System.out.println("New product quantity: " + Quan2);
+    }
+    public void addProd3(double x){
+        Quan3 = Quan3 + x;
+        System.out.println("New product quantity: " + Quan3);
+    }
+    public void getC1(){
+        System.out.println("");
+        System.out.print("Ηow much would you like to offer? ");
+    }
+    public void getC2(){
+        System.out.println("");
+        System.out.print("Ηow much would you like to offer? ");
+    }
+    public void getC3(){
+        System.out.println("");
+        System.out.print("Ηow much would you like to offer? ");
+    }
+    public void getB1(){
+        System.out.println("");
+        System.out.print("Ηow much would you like to take(Your limit is 5 packages)? ");
+    }
+    public void getB2(){
+        System.out.println("");
+        System.out.print("Ηow much would you like to take(Your limit is 5 packages)? ");
+    }
+    public void getB3(){
+        System.out.println("");
+        System.out.print("Ηow much would you like to take(Your limit is 5 packages)? ");
+    }
+    public void takeProd1(double x){
+        if(x > Quan1){
+            System.out.println("");
+            System.out.println("You can only take " + Quan1 + " packages");
+            Quan1 = 0;
+            System.out.println("");
+            System.out.println("New product quantity: " + Quan1);
+        }
+        else{
+            Quan1 = Quan1 - x;
+            System.out.println("");
+            System.out.println("New product quantity: " + Quan1);
+        }
+    }
+    public void takeProd2(double x){
+        if(x > Quan2){
+            System.out.println("");
+            System.out.println("You can only take " + Quan2 + " packages");
+            Quan2 = 0;
+            System.out.println("");
+            System.out.println("New product quantity: " + Quan2);
+        }
+        else{
+            Quan1 = Quan2 - x;
+            System.out.println("");
+            System.out.println("New product quantity: " + Quan2);
+        }
+    }
+    public void takeProd3(double x){
+        if(x > Quan3){
+            System.out.println("");
+            System.out.println("You can only take " + Quan3 + " packages");
+            Quan3 = 0;
+            System.out.println("");
+            System.out.println("New product quantity: " + Quan3);
+        }
+        else{
+            Quan3 = Quan3 - x;
+            System.out.println("");
+            System.out.println("New product quantity: " + Quan3);
+        }
+    }
+    public void donOffersM(){
+        System.out.println("");
+        System.out.println("You have offered " + Quan10 + " packages of " + Mat1);
+        System.out.println("You have offered " + Quan20 + " packages of " + Mat2);
+        System.out.println("You have offered " + Quan30 + " packages of " + Mat3);
+    }
+    public void benOffersM1(){
+        System.out.println("");
+        System.out.println("You have take " + Quan11 + " packages of " + Mat1);
+        System.out.println("You have take " + Quan21 + " packages of " + Mat2);
+        System.out.println("You have take " + Quan31 + " packages of " + Mat3);
+        System.out.println("");
+    }
+    public void benOffersM2(){
+        System.out.println("");
+        System.out.println("You have take " + Quan12 + " packages of " + Mat1);
+        System.out.println("You have take " + Quan22 + " packages of " + Mat2);
+        System.out.println("You have take " + Quan32 + " packages of " + Mat3);
+        System.out.println("");
+    }
+}
