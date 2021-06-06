@@ -1,0 +1,344 @@
+import java.util.*;
+
+public class Menu{
+    
+    public static String phone;
+    public static String name;
+    public static int J;
+    public static int K,L,I;
+    
+    public static void  main(String[] args){
+
+    Admin p1 = new Admin();
+    Donator p2 = new Donator();
+    Beneficiary p3 = new Beneficiary();
+    Organization p4 = new Organization();
+    Materials p5 = new Materials();
+    Services p6 = new Services();
+
+    List<String> Dons = new ArrayList<String>();
+    List<String> Bens = new ArrayList<String>();
+
+    do{
+
+        phone = "0";
+
+    System.out.println("");
+    System.out.print("Enter your phone number: ");
+    Scanner sc  = new Scanner(System.in);
+    phone = sc.nextLine();     
+    
+    int Phone = Integer.parseInt(phone);
+    
+    if(Phone == p1.getAdPhone()){
+        p1.getAdInfo();   
+        p1.getOptions();
+        String j = sc.nextLine();
+        J = Integer.parseInt(j);
+        switch(J){
+            case 1: 
+            p6.getServs();
+            break;
+            case 2: 
+            p5.getMats();
+            break;
+            case 3:
+            System.out.println("");
+            System.out.println("1.List Beneficiaries");
+            System.out.println("2.List Donators");
+            System.out.println("3.Reset Beneficiaries Lists");
+            System.out.println("");
+            do{
+                System.out.print("Choose which category you want to manage: ");
+                String k = sc.nextLine();
+                K = Integer.parseInt(k);
+            }while(K < 0 || K > 3);
+            if(K == 1){
+                p3.getBens();
+            }
+            else if(K == 2){
+                p2.getDons();
+            }
+            else{
+                System.out.println("Beneficiaries lists are all reset!");
+            }
+            break;
+            case 4: 
+            break;
+            case 6:
+            System.out.println("exit...");
+            System.exit(0);
+            break;
+        }
+    }
+    else if(Phone == p2.getDonPhone()){
+         p2.getDonInfo();
+         p2.getOptions();
+        do{
+            String j = sc.nextLine();
+            J = Integer.parseInt(j);
+        }while(J < 0 || J > 7);
+       
+        switch(J){
+            case 1: 
+            p2.getOpt1();
+            String l = sc.nextLine();
+            L = Integer.parseInt(l);
+            if(L == 1){
+                p5.getMats();
+                System.out.print("Choose the product you would like to offer: ");
+                l = sc.nextLine();
+                L = Integer.parseInt(l);
+                switch(L){
+                    case 1:
+                    p5.getC1();
+                    String i = sc.nextLine();
+                    I = Integer.parseInt(i);
+                    double d = I;
+                    p5.addProd1(d);
+                    break;
+                    case 2:
+                    p5.getC2();
+                    i = sc.nextLine();
+                    I = Integer.parseInt(i);
+                    d = I;
+                    p5.addProd2(d);
+                    break;
+                    case 3:
+                    p5.getC3();
+                    i = sc.nextLine();
+                    I = Integer.parseInt(i);
+                    d = I;
+                    p5.addProd3(d);
+                    break;
+                }
+            }
+            else if(L == 2){
+                p6.getServs();
+                System.out.print("Choose the service you would like to offer: ");
+                String j = sc.nextLine();
+                J = Integer.parseInt(j);
+                switch(L){
+                    case 1:
+                        p6.getS1();
+                        String i = sc.nextLine();
+                        I = Integer.parseInt(i);
+                        double d = I;
+                        p6.addServ1(d);
+                        break;
+                    case 2:
+                        p6.getS2();
+                        i = sc.nextLine();
+                        I = Integer.parseInt(i);
+                        d = I;
+                        p6.addServ2(d);
+                        break;
+                    case 3:
+                        p6.getS3();
+                        i = sc.nextLine();
+                        I = Integer.parseInt(i);
+                        d = I;
+                        p6.addServ3(d);
+                        break;
+                }
+            }
+            break;
+            case 2:
+            p5.donOffersM();
+            p6.donOffersS();
+            p2.getOpt10(); 
+            String i = sc.nextLine();
+            I = Integer.parseInt(i);
+            if(I == 1){
+                System.out.println("");
+                System.out.println("Delete or modify the offer of your choice");
+                System.out.println("");
+            }
+            else if(I == 2){
+                System.out.println("");
+                System.out.println("You donation is commited!");
+                System.out.println("");
+            }
+            else if(I == 3){
+                System.out.println("");
+                System.out.println("All your donations are now deleted!");
+                System.out.println("");
+            }
+            break;
+            case 3:
+            System.out.println("");
+            System.out.println("You donation is commited!");
+            System.out.println("");
+            break;
+            case 4: 
+            break;
+            case 6:
+            System.out.println("exit...");
+            System.exit(0);
+            break;
+        }
+    }
+    else if(Phone == p3.getBenPhone1() || Phone == p3.getBenPhone2()){
+        if(Phone == p3.getBenPhone1()){
+            p3.getBenInfo1();
+        }
+        else{
+            p3.getBenInfo2();
+        }
+        p3.getOptions();
+        String j = sc.nextLine();
+        J = Integer.parseInt(j);
+        switch(J){
+            case 1:
+            p3.getC1();
+            String y = sc.nextLine();
+            L = Integer.parseInt(y);
+            if(L == 1){
+                p5.getMats();
+                System.out.print("Choose the material you would like to take: ");
+                String z = sc.nextLine();
+                L = Integer.parseInt(z);
+                switch(L){
+                    case 1:
+                        p5.getB1();
+                        do{
+                            String i = sc.nextLine();
+                            I = Integer.parseInt(i);
+                        }while(I < 0 || I > 6);
+                        int d = I;
+                        p5.takeProd1(d);
+                        break;
+                    case 2:
+                        p5.getB2();
+                        do{
+                            String i = sc.nextLine();
+                            I = Integer.parseInt(i);
+                        }while(I < 0 || I > 6);
+                        d = I;
+                        break;
+                    case 3:
+                        p5.getB3();
+                        do{
+                            String i = sc.nextLine();
+                            I = Integer.parseInt(i);
+                        }while(I < 0 || I > 6);
+                        d = I;
+                        break;
+                }
+            }
+            else if(L ==2){
+                p6.getServs();
+                System.out.print("Choose the servive you would like to take: ");
+                String z = sc.nextLine();
+                L = Integer.parseInt(z);
+                switch(L){
+                    case 1:
+                        p6.getB1();
+                        do{
+                            String i = sc.nextLine();
+                            I = Integer.parseInt(i);
+                        }while(I < 0 || I > 9);
+                        int d = I;
+                        p6.takeServ1(d);
+                        break;
+                    case 2:
+                        p6.getB2();
+                        do{
+                            String i = sc.nextLine();
+                            I = Integer.parseInt(i);
+                        }while(I < 0 || I > 9);
+                        d = I;
+                        p6.takeServ2(d);
+                        break;
+                    case 3:
+                        p6.getB3();
+                        do{
+                            String i = sc.nextLine();
+                            I = Integer.parseInt(i);
+                        }while(I < 0 || I > 9);
+                        d = I;
+                        p6.takeServ3(d);
+                        break;
+                }
+            }
+            break;
+            case 2:
+            if(Phone == p3.getBenPhone1()){
+                p5.benOffersM1();
+                p6.benOffersS1();
+            }
+            else{
+                p5.benOffersM2();
+                p6.benOffersS2();
+            }
+            p3.getOpt10(); 
+            String i = sc.nextLine();
+            I = Integer.parseInt(i);
+            if(I == 1){
+                System.out.println("");
+                System.out.println("Delete or modify the offer of your choice");
+                System.out.println("");
+            }
+            else if(I == 2){
+                System.out.println("");
+                System.out.println("You donation is commited!");
+                System.out.println("");
+            }
+            else if(I == 3){
+                System.out.println("");
+                System.out.println("All your donations are now deleted!");
+                System.out.println("");
+            }
+            break;
+            case 3:
+            System.out.println("");
+            System.out.println("You successfully received the donatios!");
+            System.out.println("");
+            break;
+            case 4: 
+            break;
+            case 6:
+            System.out.println("exit...");
+            System.exit(0);
+            break;
+        }
+    }
+    else{
+        System.out.println("Sorry, you are not registered!");
+        System.out.print("If you want to register press 1 else press 2: ");
+        String i = sc.nextLine();
+        int I = Integer.parseInt(i);
+        
+        if(I == 1){
+            System.out.print("If you want to register as a Donator press 1 else 2: ");
+            i = sc.nextLine();
+            I = Integer.parseInt(i);
+            if(I == 1){
+                System.out.print("Give your name: ");
+                String Dn = sc.nextLine();
+                System.out.println("");
+                System.out.print("Give your phone number: ");
+                String dp = sc.nextLine();
+                int dP = Integer.parseInt(dp);
+            }
+            else if(I == 2){
+                System.out.print("Give your name: ");
+                String Bn = sc.nextLine();
+                System.out.println("");
+                System.out.print("Give your phone number: ");
+                String bn = sc.nextLine();
+                int bN = Integer.parseInt(bn);
+            }
+            System.out.println("");
+            System.out.print("Press 5 to get back to menu  ");
+            String ii = sc.nextLine();
+            J = Integer.parseInt(ii);
+        }
+        else if(I == 2){
+            System.out.println("exit...");
+            System.exit(0);
+        }
+    }
+}while(J == 5);
+}
+}
