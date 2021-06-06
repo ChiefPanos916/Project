@@ -1,0 +1,147 @@
+public class Services {
+    public String Serv1 = "House Cleaning";
+    public String Serv2 = "Babysitting";
+    public String Serv3 = "Elderly Care";
+    
+    public double Time1 = 16.5;
+    public double Time2 = 32;
+    public double Time3 = 23;
+
+    public double Time10 = 4;
+    public double Time20 = 0;
+    public double Time30 = 0;
+
+    public double Time11 = 3;
+    public double Time21 = 15;
+    public double Time31 = 0;
+
+    public double Time12 = 12;
+    public double Time22 = 0;
+    public double Time32 = 7;
+
+    public String getServ1(){
+        return this.Serv1;
+    }
+    public String getServ2(){
+        return this.Serv2;
+    }
+    public String getServ3(){
+        return this.Serv3;
+    }
+    public double geTime1(){
+        return this.Time1;
+    }
+    public double getTime2(){
+        return this.Time2;
+    }
+    public double getTime3(){
+        return this.Time3;
+    }
+    public void getServs(){
+        System.out.println("");
+        System.out.println("SERVICES: ");
+        System.out.println("");
+        System.out.println("1.Service: " + this.Serv1 + ", Service Time: " + this.Time1 + " hours");
+        System.out.println("2.Service: " + this.Serv2 + ", Service Time: " + this.Time2 + " hours");
+        System.out.println("3.Service: " + this.Serv3 + ", Service Time: " + this.Time3 + " hours");
+        System.out.println("");
+    }
+    public void addServ1(double x){
+        Time1 = Time1 + x;
+        System.out.println("New project quantity: " + Time1);
+    }
+    public void addServ2(double x){
+        Time2 = Time2 + x;
+        System.out.println("New project quantity: " + Time2);
+    }
+    public void addServ3(double x){
+        Time3 = Time3 + x;
+        System.out.println("New project quantity: " + Time3);
+    }
+    public void getS1(){
+        System.out.println("");
+        System.out.print("Ηow many hours would you like to offer? ");
+    }
+    public void getS2(){
+        System.out.println("");
+        System.out.print("Ηow many hours would you like to offer? ");
+    }
+    public void getS3(){
+        System.out.println("");
+        System.out.print("Ηow many hours would you like to offer? ");
+    }
+    public void getB1(){
+        System.out.println("");
+        System.out.print("Ηow many hours would you like to take(Your limit is 8 hours)? ");
+    }
+    public void getB2(){
+        System.out.println("");
+        System.out.print("Ηow many hours would you like to take(Your limit is 8 hours)? ");
+    }
+    public void getB3(){
+        System.out.println("");
+        System.out.print("Ηow many hours would you like to take(Your limit is 8 hours)? ");
+    }
+    public void takeServ1(double x){
+        if(x > Time1){
+            System.out.println("");
+            System.out.println("You can only take " + Time1 + " hours");
+            Time1 = 0;
+            System.out.println("");
+            System.out.println("New service quantity: " + Time1);
+        }
+        else{
+            Time1 = Time1 - x;
+            System.out.println("");
+            System.out.println("New product quantity: " + Time1);
+        }
+    }
+    public void takeServ2(double x){
+        if(x > Time2){
+            System.out.println("");
+            System.out.println("You can only take " + Time2 + " hours");
+            Time2 = 0;
+            System.out.println("");
+            System.out.println("New service quantity: " + Time2);
+        }
+        else{
+            Time2 = Time2 - x;
+            System.out.println("");
+            System.out.println("New product quantity: " + Time2);
+        }
+    }
+    public void takeServ3(double x){
+        if(x > Time3){
+            System.out.println("");
+            System.out.println("You can only take " + Time1 + " hours");
+            Time3 = 0;
+            System.out.println("");
+            System.out.println("New service quantity: " + Time3);
+        }
+        else{
+            Time3 = Time3 - x;
+            System.out.println("");
+            System.out.println("New product quantity: " + Time3);
+        }
+    }
+    public void donOffersS(){
+        System.out.println("");
+        System.out.println("You have offered " + Time10 + " hours of " + Serv1);
+        System.out.println("You have offered " + Time20 + " hours of " + Serv2);
+        System.out.println("You have offered " + Time30 + " hours of " + Serv3);
+    }
+    public void benOffersS1(){
+        System.out.println("");
+        System.out.println("You have used " + Time11 + " hours of " + Serv1);
+        System.out.println("You have used " + Time21 + " hours of " + Serv2);
+        System.out.println("You have used " + Time31 + " hours of " + Serv3);
+        System.out.println("");
+    }
+    public void benOffersS2(){
+        System.out.println("");
+        System.out.println("You have used " + Time12 + " hours of " + Serv1);
+        System.out.println("You have used " + Time22 + " hours of " + Serv2);
+        System.out.println("You have used " + Time32 + " hours of " + Serv3);
+        System.out.println("");
+    }
+}
